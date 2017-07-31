@@ -51,22 +51,44 @@
 			background-position:center;
 			background-image:url(img/header.jpg);
 			color:#fff;
+			padding: 100px 100px;
+		}
+		.img-container{
+			position: relative;
 		}
 		.overlay{
 			position: absolute;
-  			background-color: #008CBA;
-  			overflow: hidden;
-  			width: 100%;
-  			height: auto;
-  			transition: 1s ease;
-  			opacity: 0;
-		}
-		div .img:hover{
-			opacity: 0.5;
+			background-color: #008CBA;
+			overflow: hidden;
 			transition: 1s ease;
+			width: 0;
+			height: 100%;
+			bottom: 0;
+			right: 0;
+			opacity: 0.7;
 		}
-		div .text-center:hover .overlay{
-			opacity: 1;
+		.overlay-left{
+  			left: 0;
+		}
+		.overlay-right {
+  			left: 100%;
+		}
+		.img-container:hover .overlay{
+			width: 100%;
+		}
+		.img-container:hover .overlay-right{
+			left: 0;
+		}
+		.text{
+			white-space: nowrap; 
+  			color: white;
+  			font-size: 20px;
+  			position: absolute;
+  			overflow: hidden;
+  			top: 50%;
+  			left: 50%;
+  			transform: translate(-50%, -50%);
+  			-ms-transform: translate(-50%, -50%);
 		}
 	</style>
 </head>
@@ -141,7 +163,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-3">
+					<div class="col-md-3 col-sm-6">
 						<div class="panel panel-warning">
 							<div class="panel-body text-center text-primary">
 								<span class="glyphicon glyphicon-asterisk sr-icons" aria-hidden="true"></span>
@@ -150,7 +172,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-3 col-sm-6">
 						<div class="panel panel-warning">
 							<div class="panel-body text-center text-primary">
 								<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
@@ -159,7 +181,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-3 col-sm-6">
 						<div class="panel panel-warning">
 							<div class="panel-body text-center text-primary">
 								<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
@@ -168,7 +190,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-3 col-sm-6">
 						<div class="panel panel-warning text-primary">
 							<div class="panel-body text-center">
 								<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
@@ -185,40 +207,52 @@
 		<div class="row bg-dark" id="portfolio">
 			<div class="col-md-12">
 				<div class="row">
-					<div class="col-md-4 col-sm-6 text-center">
-						<img class="img img-responsive" src="img/1.jpg">
-						<div class="overlay">
-							<span class="glyphicon glyphicon-plus"></span>
+					<div class="col-md-4 col-sm-6">
+						<div class="img-container text-center">
+							<img class="img img-responsive" src="img/1.jpg">
+							<div class="overlay overlay-right">
+								<span class="glyphicon glyphicon-plus text"></span>
+							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-6 text-center">
-						<img class="img img-responsive" src="img/2.jpg">
-						<div class="overlay">
-							<span class="glyphicon glyphicon-plus"></span>
+					<div class="col-md-4 col-sm-6">
+						<div class="img-container text-center">
+							<img class="img img-responsive" src="img/2.jpg">
+							<div class="overlay overlay-left">
+								<span class="glyphicon glyphicon-plus text"></span>
+							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-6 text-center">
-						<img class="img img-responsive" src="img/3.jpg">
-						<div class="overlay">
-							<span class="glyphicon glyphicon-plus"></span>
+					<div class="col-md-4 col-sm-6">
+						<div class="img-container text-center">
+							<img class="img img-responsive" src="img/3.jpg">
+							<div class="overlay overlay-right">
+								<span class="glyphicon glyphicon-plus text"></span>
+							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-6 text-center">
-						<img class="img img-responsive" src="img/4.jpg">
-						<div class="overlay">
-							<span class="glyphicon glyphicon-plus"></span>
+					<div class="col-md-4 col-sm-6">
+						<div class="img-container text-center">
+							<img class="img img-responsive" src="img/4.jpg">
+							<div class="overlay overlay-left">
+								<span class="glyphicon glyphicon-plus text"></span>
+							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-6 text-center">
-						<img class="img img-responsive" src="img/5.jpg">
-						<div class="overlay">
-							<span class="glyphicon glyphicon-plus"></span>
+					<div class="col-md-4 col-sm-6">
+						<div class="img-container text-center">
+							<img class="img img-responsive" src="img/5.jpg">
+							<div class="overlay overlay-right">
+								<span class="glyphicon glyphicon-plus text"></span>
+							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-6 text-center">
-						<img class="img img-responsive" src="img/6.jpg">
-						<div class="overlay">
-							<span class="glyphicon glyphicon-plus"></span>
+					<div class="col-md-4 col-sm-6">
+						<div class="img-container text-center">
+							<img class="img img-responsive" src="img/6.jpg">
+							<div class="overlay overlay-left">
+								<span class="glyphicon glyphicon-plus text"></span>
+							</div>
 						</div>
 					</div>
 				</div>
