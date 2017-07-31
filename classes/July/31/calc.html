@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="container">
+		<form role="form">
+		<div class="row">
+			<div class="form-group">
+				<input type="button" name="btn7" id="btn7" value="7" class="col-sm-1 btn btn-primary" class="form-control" onclick="calc('btn7')">
+				<input type="button" name="btn8" id="btn8" value="8" class="col-sm-1 btn btn-primary" class="form-control" onclick="calc('btn8')">
+				<input type="button" name="btn9" id="btn9" value="9" class="col-sm-1 btn btn-primary" class="form-control" onclick="calc('btn9')">
+				<input type="button" name="btn9" id="btn/" value="/" class="col-sm-1 btn btn-success" class="form-control" onclick="calco('btn/')">
+				<input type="button" name="btn9" id="btn*" value="*" class="col-sm-1 btn btn-success" class="form-control" onclick="calco('btn*')">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<input type="button" name="btn7" id="btn4" value="4" class="col-sm-1 btn btn-primary" class="form-control" onclick="calc('btn4')">
+				<input type="button" name="btn8" id="btn5" value="5" class="col-sm-1 btn btn-primary" class="form-control" onclick="calc('btn5')">
+				<input type="button" name="btn9" id="btn6" value="6" class="col-sm-1 btn btn-primary" class="form-control" onclick="calc('btn6')">
+				<input type="button" name="btn9" id="btn-" value="-" class="col-sm-1 btn btn-success" class="form-control" onclick="calco('btn-')">
+				<input type="button" name="btn9" id="btn+" value="+" class="col-sm-1 btn btn-success" class="form-control" onclick="calco('btn+')">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<input type="button" name="btn7" id="btn1" value="1" class="col-sm-1 btn btn-primary" class="form-control" onclick="calc('btn1')">
+				<input type="button" name="btn8" id="btn2" value="2" class="col-sm-1 btn btn-primary" class="form-control" onclick="calc('btn2')">
+				<input type="button" name="btn9" id="btn3" value="3" class="col-sm-1 btn btn-primary" class="form-control" onclick="calc('btn3')">
+				<input type="button" name="btn9" id="btn." value="." class="col-sm-1 btn btn-success" class="form-control" onclick="calco('btn.')">
+				<input type="button" name="btn9" id="btn=" value="=" class="col-sm-1 btn btn-success" class="form-control" onclick="result('btn=')">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<input type="text" name="txt" id="txt1" placeholder="Calculator" class="col-sm-5" class="form-control" onclick="calc()">
+			</div>
+			<div class="form-group">
+				<input type="text" name="txt" id="txt2" placeholder="Calculator" class="col-sm-5" class="form-control" onclick="calc()">
+			</div>
+			<div class="form-group">
+				<input type="text" name="txt" id="txt3" placeholder="Calculator" class="col-sm-5" class="form-control" onclick="calc()">
+			</div>
+		</div>
+		</form>
+	</div>
+	<script type="text/javascript">
+	var num1, num2, opr;
+
+		function calc(num)	{
+			document.getElementById('txt1').value = document.getElementById('txt1').value + document.getElementById(num).value;
+		}
+		function calco(opr_id) {
+			num1 = document.getElementById('txt1').value;
+			opr = document.getElementById(opr_id).value;
+			document.getElementById('txt2').value=num1 + opr;
+			document.getElementById('txt1').value="";
+
+		}
+		function result() {
+			num2 = document.getElementById('txt1').value;
+			document.getElementById('txt3').value = num2;
+			var res=0;
+			switch (opr) {
+				case "+":
+					res=parseInt(num1) + parseInt(num2);
+					break;
+				case "-":
+					res=parseInt(num1) - parseInt(num2);
+					break;
+				case "*":
+					res=parseInt(num1) * parseInt(num2);
+					break;
+				case "/":
+					res=parseInt(num1) / parseInt(num2);
+					break;
+			}
+			document.getElementById('txt1').value=res;
+		}
+	</script>
+</body>
+</html>

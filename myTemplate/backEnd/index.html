@@ -4,13 +4,227 @@
 	<title>BackEnd</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<style type="text/css">
-		div{
-			border: 1px;
-			border-style: dashed;
+		.dropdown-menu{
+			width: 310px;
+			min-width: 0;
+			overflow: hidden;
+			padding: 2px 5px;
+		}
+		.dropdown-user{
+			width: 150px;
+		}
+		span{
+			padding: 2px;
 		}
 	</style>
 </head>
-<body>
+<body data-spy="scroll" data-target="#myNavBar">
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">Bootstrap</a>
+			</div>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						<span class="glyphicon glyphicon-envelope"></span><span class="glyphicon glyphicon-triangle-bottom small"></span>
+					</a>
+
+					<ul class="dropdown-menu">
+						<li>
+							<a href="">
+								<div>
+									<strong>Ashish Kumar</strong>
+									<span class="pull-right text-muted">
+										<em>Yesterday</em>
+									</span>
+								</div>
+								<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+							</a>
+						</li>
+						<li class="divider" role="separator"></li>
+						<li>
+							<a href="">
+								<div>
+									<strong>Gunjan Saini</strong>
+									<span class="pull-right text-muted">
+										<em>Yesterday</em>
+									</span>
+								</div>
+								<div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+							</a>
+						</li>
+						<li class="divider" role="separator"></li>
+						<li>
+							<a class="text-center" href="">
+								<strong>Read all Messages</strong>
+								<span class="pull-right text-muted glyphicon glyphicon-triangle-right"></span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expended="true">
+						<span class="glyphicon glyphicon-tasks"></span><span class="glyphicon glyphicon-triangle-bottom small"></span>
+					</a>
+
+					<ul class="dropdown-menu">
+						<li>
+							<a href="">
+								<div>
+									<p>
+										<strong>Task 1</strong>
+										<span class="pull-right text-muted">60% Completed</span>
+									</p>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-minvalue="0" aria-maxvalue="100" style="width: 60%"></div>
+								</div>
+							</a>
+						</li>
+						<li class="divider" role="separator"></li>
+						<li>
+							<a href="">
+								<div>
+									<strong>Task 2</strong>
+									<span class="pull-right text-muted">40% Completed</span>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-minvalue="0" aria-maxvalue="100" style="width: 40%"></div>
+								</div>
+							</a>							
+						</li>
+						<li class="divider" role="separator"></li>
+						<li>
+							<a href="">
+								<div>
+									<strong>Task 3</strong>
+									<span class="pull-right text-muted">50% Completed</span>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-minvalue="0" aria-maxvalue="100" style="width: 50%"></div>
+								</div>
+							</a>							
+						</li>
+						<li class="divider" role="separator"></li>
+						<li>
+							<a href="">
+								<div>
+									<strong>Task 4</strong>
+									<span class="pull-right text-muted">80% Completed</span>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-minvalue="0" aria-maxvalue="100" style="width: 80%"></div>
+								</div>
+							</a>							
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" aria-haspopup="true">
+						<span class="glyphicon glyphicon-bullhorn"></span><span class="glyphicon glyphicon-triangle-bottom small"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="">
+								<span class="pull-left"></span>New Comment <span class="text-muted pull-right">4 minutes ago</span>
+							</a>
+						</li>
+						<li class="divider" role="separator"></li>
+						<li>
+							<a href="">
+								<span class="pull-left"></span>3 New Followers <span class="text-muted pull-right">4 minutes ago</span>
+							</a>
+						</li>
+						<li class="divider" role="separator"></li>
+						<li>
+							<a href="">
+								<span class="pull-left glyphicon glyphicon-envelope"></span>Message Sent <span class="text-muted pull-right">4 minutes ago</span>
+							</a>
+						</li>
+						<li class="divider" role="separator"></li>
+						<li>
+							<a href="">
+								<span class="pull-left glyphicon glyphicon-tasks"></span>New Task <span class="text-muted pull-right">4 minutes ago</span>
+							</a>
+						</li>
+						<li class="divider" role="separator"></li>
+						<li>
+							<a href="" class="text-center">
+								<strong>See All Alerts</strong> <span class="glyphicon glyphicon-triangle-right pull-right"></span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" aria-haspopup="true">
+						<span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-triangle-bottom small"></span>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li>
+							<a href="">
+								<span class="glyphicon glyphicon-user">User Profile</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span class="glyphicon glyphicon-cog">Settings</span>
+							</a>
+						</li>
+						<li class="divider" role="separator"></li>
+						<li>
+							<a href="">
+								<span class="glyphicon glyphicon-log-out">LogOut</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<div class="navbar-inverse" role="navigation">
+				<div class="collapse navbar-collapse" id="myNavBar">
+					<ul class="list-group">
+						<li class="list-group-item">
+							<div class="input-group">
+								<input type="text" name="search" id="search" placeholder="Search..." class="form-control">
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default">
+										<span class="glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+						</li>
+						<li class="list-group-item">
+							<a href="#"><span class="glyphicon glyphicon-search"></span>Dashboard</a>
+						</li>
+						<li class="list-group-item">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            	<i class="glyphicon glyphicon-signal"></i> Charts<span class="glyphicon glyphicon-arrow"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="flot.html">Flot Charts</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html">Morris.js Charts</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+
 	<div class="container-fluid">
 		<div class="row">
 		<!-- left side menu -->
@@ -20,5 +234,7 @@
 			<div class="col-lg-8 col-md-8 col-sm-8">Right main content</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
