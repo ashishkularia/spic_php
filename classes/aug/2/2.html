@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+						<label class="radio-inline"><input type="radio" name="gender" id="male" Value="Male" checked>Male</label>
+						<label class="radio-inline"><input type="radio" name="gender" id="female" Value="Female">Female</label>
+						<input type="button" name="btn" id="btn" class="col-sm-3 btn btn-primary" value="checkedRadio" class="form-control" onclick="checkedradio()">
+						<input type="button" name="btn2" id="btn2" class="col-sm-3 btn btn-success" value="Gender" class="form-control" onclick="f1()">
+					<div class="col-sm-3">
+						<input type="text" name="txt" id="txt" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+						<label class="checkbox-inline"><input type="checkbox" name="checkbox" id="1" Value="Option 1">option 1</label>
+						<label class="checkbox-inline"><input type="checkbox" name="checkbox" id="1" Value="Option 2">Option 2</label>
+						<label class="checkbox-inline"><input type="checkbox" name="checkbox" id="1" Value="Option 3">Option 3</label>
+						<input type="button" name="btn2" id="btn2" class="col-sm-3 btn btn-success" value="checkbox" class="form-control" onclick="f2()">
+						<input type="button" name="btn2" id="btn2" class="col-sm-3 btn btn-primary" value="Class" class="form-control" onclick="f3()">
+					<div class="col-sm-3">
+						<input type="text" name="txt" id="txt1" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-3">
+						<input type="text" name="txt" id="txt4" class="a">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" name="txt" id="txt2" class="c">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" name="txt" id="txt3" class="a">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" name="txt" id="txt4" class="c">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function checkedradio(){
+			if (document.getElementById('male').checked) {
+				document.getElementById('txt').value=document.getElementById('male').value;
+			}
+			else {
+				document.getElementById('txt').value=document.getElementById('female').value;				
+			}
+		}
+
+		function f1(){
+			var gender=document.getElementsByName('gender');
+			if (gender[0].checked)	{
+				document.getElementById('txt').value=gender[0].value;
+			}
+			else {
+			
+				document.getElementById('txt').value=gender[1].value;
+			}
+		}
+
+		function f2() {
+			var chck=document.getElementsByName("checkbox");
+			chb_value="";
+			for (i=0;i<chck.length;i++) {
+				if(chck[i].checked) chb_value +=chck[i].value;
+			}
+
+					document.getElementById('txt1').value = chb_value;
+		}
+
+		function f3() {
+			var class_a = document.getElementsByClassName("a");
+			var class_b = document.getElementsByClassName("c");
+			alert("Class A"+class_a.length);
+			alert("Class B"+class_b.length);
+			for (i=0;i<class_a.length;i++){document.getElementById('txt').value += class_a[i].value;}
+			var tag=document.getElementsByTagName("input");
+			alert("Total Input tag "+tag.length);
+		}
+
+		function f4() {
+			var tag=document.getElementsByTagName("input");
+
+		}
+	</script>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>	
+</body>
+</html>
