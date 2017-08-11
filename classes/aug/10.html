@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<style type="text/css">
+		div {
+			border: 1px;
+			border-style: dashed;
+		}
+
+		div .col-md-4 {
+			height: 300px;
+			width: 300px;
+		}
+		div .col-md-4 img{
+			width: 50px;
+			height: 50px;
+		}
+		div .img-list {
+			width: 450px;
+			height: 110px;
+		}
+		div .img-list img{
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<img src="../img/2.jpg" id="img1" onmouseover="default_1()">
+			</div>
+			<div class="col-md-4">
+				<input type="button" name="btn" id="btn" value="ZoomIn" class="btn btn-info" onclick="zoomIn()">
+				<input type="button" name="btn" id="btn" value="ZoomIn Auto" class="btn btn-info" onclick="zoomInAuto()">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="img-list">
+					<img src="../img/1.jpg" id="1" onmouseover="imgOver(id)">
+					<img src="../img/2.jpg" id="2" onmouseover="imgOver(id)">
+					<img src="../img/3.jpg" id="3" onmouseover="imgOver(id)">
+					<img src="../img/4.jpg" id="4" onmouseover="imgOver(id)">
+				</div>
+			</div>			
+			<div class="col-md-6">
+				<b id="test"></b>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	var new_position, new_height, new_width, new_top, new_left, loop;
+
+		function imgOver(id) {
+			var img = document.getElementsByTagName('img');
+			img[0].src = "../img/"+id+".jpg";
+			default_1();
+			clearTimeout(loop);
+			zoomInAuto();
+		}
+		function default_1() {
+			new_position = document.getElementById('img1').style.position = "absolute";
+			new_height = document.getElementById("img1").style.height = "100px";
+			new_width = document.getElementById("img1").style.width = "100px";
+			new_top = document.getElementById("img1").style.top = "100px";
+			new_left = document.getElementById("img1").style.left = "100px";
+		}
+
+		function zoomIn() {
+			new_left = new_left.substr(0,new_left.indexOf("p"));
+			new_top = new_top.substr(0,new_top.indexOf("p"));
+			new_width = new_width.substr(0,new_width.indexOf("p"));
+			new_height = new_height.substr(0,new_height.indexOf("p"));
+			new_left -= 5;
+			new_top -= 5;
+			new_width = parseInt(new_width) + 10;
+			new_height = parseInt(new_height) + 10;
+			new_left += "px";
+			new_top += "px";
+			new_height += "px";
+			new_width += "px";
+			document.getElementById("img1").style.height = new_height;
+			document.getElementById("img1").style.width = new_width;
+			document.getElementById("img1").style.top = new_top;
+			document.getElementById("img1").style.left = new_left;
+		}
+
+		function zoomInAuto() {
+			new_left = new_left.substr(0,new_left.indexOf("p"));
+			new_top = new_top.substr(0,new_top.indexOf("p"));
+			new_width = new_width.substr(0,new_width.indexOf("p"));
+			new_height = new_height.substr(0,new_height.indexOf("p"));
+			if (new_left>0) {
+			new_left -= 5;
+			new_top -= 5;
+			new_width = parseInt(new_width) + 10;
+			new_height = parseInt(new_height) + 10;
+			new_left += "px";
+			new_top += "px";
+			new_height += "px";
+			new_width += "px";
+			document.getElementById("img1").style.height = new_height;
+			document.getElementById("img1").style.width = new_width;
+			document.getElementById("img1").style.top = new_top;
+			document.getElementById("img1").style.left = new_left;
+			}
+			loop = setTimeout("zoomInAuto()",50);
+		}
+	</script>
+</body>
+</html>
