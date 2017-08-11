@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		div .cover {
+			width: 400px;
+			height: 200px;
+		}
+		div .cover img {
+			width: 100%;
+			height: 100%;
+		}
+		div .img-list img{
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body onload="default_1()">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="cover">
+				</div>				
+			</div>
+			<div class="col-md-4"><i id="test"></i></div>
+		</div>
+<!--	<div class="row">
+			<div class="col-md-4">
+				<div class="img-list">
+					<img src="../img/1.jpg" id="1" onmouseover="imgOver(id)">
+					<img src="../img/2.jpg" id="2" onmouseover="imgOver(id)">
+					<img src="../img/3.jpg" id="3" onmouseover="imgOver(id)">
+					<img src="../img/4.jpg" id="4" onmouseover="imgOver(id)">
+				</div>
+			</div>			
+		</div>-->
+	</div>
+		<div class="row">
+			<div class="img-list">
+				<img src="../img/1.jpg" id="pic1">				
+			</div>
+		</div>
+	<script type="text/javascript">
+	var i=2, img_float_left=200;
+
+		function default_1() {
+			document.getElementById('pic1').style.position = "absolute";
+			document.getElementById('pic1').style.left = img_float_left;
+			move();
+			alert("test");
+		}
+
+		function move() {
+			img_float_left += 1;
+			document.getElementById('pic1').style.position = "absolute";
+			document.getElementById('pic1').style.left = img_float_left;
+			setTimeout("move()",100);
+			document.getElementById('test').innerHTML = img_float_left;
+		}
+
+		function f1() {
+			if(i<5) {
+				var new_url = "../img/"+i+".jpg";
+				i++;
+			}
+			else {i=1;
+				var new_url = "../img/"+i+".jpg";
+				i++;
+			}
+			document.getElementById("cover").src = new_url;
+			setTimeout("f1()",1000);
+		}
+
+		function imgOver(id) {
+			var img = document.getElementsByTagName('img');
+			img[0].src = "../img/"+id+".jpg";
+		}
+	</script>
+</body>
+</html>

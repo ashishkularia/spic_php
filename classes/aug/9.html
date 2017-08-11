@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		div {
+			border: 1px;
+			border-style: dashed;
+		}
+		div .cover {
+			width: 400px;
+			height: 200px;
+		}
+		div .cover img {
+			width: 100%;
+			height: 100%;
+		}
+		div .img-list {
+			width: 450px;
+			height: 110px;
+		}
+		div .img-list img{
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body onload="slide_pause()">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="cover">
+					<img src="../img/1.jpg" class="cover">
+				</div>				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="img-list">
+					<img src="../img/1.jpg" id="1" onmouseover="imgOver(id)">
+					<img src="../img/2.jpg" id="2" onmouseover="imgOver(id)">
+					<img src="../img/3.jpg" id="3" onmouseover="imgOver(id)">
+					<img src="../img/4.jpg" id="4" onmouseover="imgOver(id)">
+				</div>
+			</div>			
+			<div class="col-md-6">
+				<b id="test"></b>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<img src="../img/1.jpg" id="slide_pause_1" height="200px" width="300px" >				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<img src="../img/1.jpg" id="slide_1" height="200px" width="300px" >				
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function imgOver(id) {
+			var img = document.getElementsByTagName('img');
+			img[0].src = "../img/"+id+".jpg";
+		}
+	
+	var img_float_left="0px";
+
+		function default_1() {
+//			for (var i=1; i<5 ; i++) {
+				var id = "slide_"+1;
+				document.getElementById(id).style.position = "absolute";
+				document.getElementById(id).style.left = img_float_left;
+//			}
+			move();
+		}
+
+		function move() {
+				var indexOfP = img_float_left.indexOf("p");
+				img_float_left = img_float_left.substr(0,indexOfP);
+				img_float_left = parseInt(img_float_left);
+				if (img_float_left < 1250) {
+					img_float_left += 1;
+				}
+				else {
+					img_float_left=0;
+				}
+			document.getElementById('test').innerHTML = img_float_left;
+//			for (var i = 0; i < 5; i++) {
+				var id = "slide_"+1;
+//				img_float_left = img_float_left + (i*100);				
+				document.getElementById(id).style.position = "absolute";
+				document.getElementById(id).style.left = img_float_left + "px";
+//			}
+			setTimeout("move()",10);
+		}
+
+		function slide_pause() {
+			document.getElementById("slide_pause_1").style.position = "absolute";
+			document.getElementById("slide_pause_1").style.left = img_float_left;
+			move_pause();
+		}
+
+		function move_pause() {
+			var indexOfP = img_float_left.indexOf("p");
+			img_float_left = img_float_left.substr(0,indexOfP);
+			if (img_float_left < 1250) {
+				if (img_float_left == 500) {
+					setInterval("move_pause()",3000);
+				}
+				else {
+					img_float_left = parseInt(img_float_left) + 1;
+				}
+					setTimeout("move_pause()",10);
+			}
+			else {img_float_left=0;}
+			img_float_left += "px";
+			document.getElementById("slide_pause_1").style.position = "absolute";
+			document.getElementById("slide_pause_1").style.left = img_float_left;
+			document.getElementById('test').innerHTML = img_float_left;
+		}
+	</script>
+</body>
+</html>
