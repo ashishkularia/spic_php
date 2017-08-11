@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="container">
+		<form name="form">
+			<div class="form-group">
+				<label class="control-label">Getting Control By form</label>
+				<div class="col-sm-3">
+					<input type="text" name="txt" placeholder="form 1" class="form-control">					
+				</div>
+				<div class="col-sm-3">
+					<input type="button" name="txt1" value="Text1" class="btn btn-success" class="form-control" onclick="f1(0)">
+				</div>
+			</div>
+		</form>
+		<form name="form2">
+			<div class="form-group">
+				<div class="col-sm-3">
+					<input type="text" name="txt" placeholder="Form 2" class="form-control">
+				</div>
+				<div class="col-sm-3">
+					<input type="button" name="txt2" value="Text2" class="btn btn-success" class="form-control" onclick="f1(1)">
+				</div>
+			</div>
+		</form>
+		<form name="form2">
+			<div class="form-group">
+				<div class="col-sm-3">
+					<input type="button" name="btn" class="btn btn-info" class="form-control" value="btn" onclick="f2()">			
+				</div>
+				<div class="col-sm-3">
+					<input type="button" name="btn" class="btn btn-primary" class="form-control" value="btn1" onclick="f3()">			
+				</div>
+				<div class="col-sm-3" id="btn_div">
+					Main
+				</div>
+			</div>
+		</form>
+		<form>
+			<div class="col-sm-3">
+				<input type="text" name="txt_list" class="form-control" placeholder="List Option" id="txt_list">
+			</div>
+			<select name="ul_list" size=5 >
+				<option value="Option 1">Option 1</option>
+				<option value="Option 2">Option 2</option>
+			</select>			
+		</form>
+		<form>
+			<div class="col-sm-3" id="dynamic">
+				<input type="button" name="btn" class="btn btn-primary" class="form-control" value="btn1" onclick="f4()">			
+			</div>
+			<select name="ul_list" size=5 >
+				<option value="Option 1">Option 1</option>
+				<option value="Option 2">Option 2</option>
+			</select>			
+		</form>
+		<div class="col-sm-3">
+			<input type="button" name="btn" class="btn btn-primary" class="form-control" value="addRow" onclick="f5()">			
+		</div>
+		<div class="col-sm-3">
+			<input type="button" name="btn" class="btn btn-primary" class="form-control" value="DeleteRow" onclick="f6()">			
+		</div>
+		<table id="table" class="table tbale hover">
+			<tr>
+				<td>R1C1</td>
+				<td>R1C2</td>
+			</tr>
+			<tr>
+				<td>R2C1</td>
+				<td>R2C2</td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript">
+		function f1(i)	{
+				alert(document.forms[i].txt.value);
+		}
+
+		function f2()	{
+			var a=document.getElementById("btn_div");
+			var new_control=document.createElement("h1");
+			new_control.innerHTML="Heading 1";
+			a.appendChild(new_control);
+		}
+
+		function f3()	{
+			var txt_list=document.getElementById('txt_list').value;
+			var my_list=document.getElementsByName("ul_list");
+			var new_opt=document.createElement("option");
+			new_opt.value=txt_list;
+			new_opt.innerHTML=txt_list;
+			my_list[0].appendChild(new_opt);
+			alert(txt_list);
+		}
+
+		function f4()	{
+			var new_ele=document.getElementById("dynamic");
+			var new_ctrl=document.createElement("input");
+			new_ctrl.type="text";
+			new_ctrl.id="f4_id";
+			new_ctrl.value="Dynamic value";
+			new_ctrl.class="form-control";
+			new_ele.appendChild(new_ctrl);
+		}
+
+		function f5() {
+			var table=document.getElementById("table");
+			var row_len=table.rows.length;
+			var new_row=table.insertRow(row_len);
+			var new_cell=new_row.insertCell(0);
+			var new_cell_1=new_row.insertCell(1);
+			new_cell.innerHTML="R"+row_len+"C1";
+			new_cell_1.innerHTML="R"+row_len+"C2";
+		}
+
+		function f6()	{
+			var table=document.getElementById("table");
+			var row_len=table.rows.length;
+			table.deleteRow(row_len-1);
+		}
+	</script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>	
+</body>
+</html>
