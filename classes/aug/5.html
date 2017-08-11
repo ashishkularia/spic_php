@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    	body {
+    		padding-top: 70px;
+    	}
+
+    </style>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
+					<div class="sr-only">Toggle Navigation</div>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">Homework</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNav">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#login"><span class="glyphicon glyphicon-log-in"></span> LogIn</a></li>
+					<li><a href="#reg"><span class="glyphicon glyphicon-user"></span> Registration</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container" id="login">
+		<div class="col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-3">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<span class="glyphicon glyphicon-log-in"></span> LogIn Form
+				</div>
+				<div class="panel-body">
+					<form>
+						<div class="row">
+							<div class="form-group">
+								<div class="col-md-4 col-sm-4">
+									<label class="label-control">User Name</label>
+								</div>
+								<div class="col-md-8 col-sm-8">
+									<input type="text" name="username" id="username" placeholder="Username or Email Address" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-4 col-sm-4">
+									<label class="label-control">Password</label>
+								</div>
+								<div class="col-md-8 col-sm-8">
+									<input type="password" name="pass" id="pass" placeholder="Password" class="form-control">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="panel-footer">
+					<div class="row">
+						<div class="col-md-offset-8 col-md-2">
+							<input type="button" name="login_btn" id="login_btn" value="LogIn" class="btn btn-success" onclick="login()">
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="container" id="reg">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="panel panel-info">
+				<div class="panel-heading"><span class="glyphicon glyphicon-user"></span> Registration Form</div>
+				<div class="panel-body">
+					<form class="form-horizontal">
+						<div class="row">
+							<div class="form-group">
+								<div class="col-md-1 col-md-offset-1 col-sm-2">
+									<label class="label-control">First Name</label>
+								</div>
+								<div class="col-md-3 col-sm-4">
+									<input type="text" name="fname" id="fname" placeholder="First Name" class="form-control">
+								</div>
+								<div class="col-md-1 col-md-offset-1 col-sm-2">
+									<label class="label-control">Last Name</label>
+								</div>
+								<div class="col-md-3 col-sm-4">
+									<input type="text" name="lname" id="lname" placeholder="Last Name" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-1 col-md-offset-1 col-sm-2">
+									<label class="label-control">Father's Name</label>
+								</div>
+								<div class="col-md-3 col-sm-4">
+									<input type="text" name="fatname" id="fatname" class="form-control" placeholder="Father's Name">
+								</div>
+								<div class="col-md-1 col-md-offset-1 col-sm-2">
+									<label class="label-control">Mother's Name</label>
+								</div>
+								<div class="col-md-3 col-sm-4">
+									<input type="text" name="motname" id="motname" class="form-control" placeholder="Mother's Name">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-1 col-md-offset-1 col-sm-2">
+									<label class="label-control">DOB</label>									
+								</div>
+								<div class="col-md-3 col-sm-4">
+									<input type="date" name="dob" id="dob" class="form-control" placeholder="Date Of Birth">
+								</div>
+							</div>
+							<hr>
+							<div class="form-group">
+								<div class="col-md-10 col-md-offset-1"><h2>Education</h2>
+									<table class="table table-bordered table-responsive table-hover text-centered" id="edu_table">
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>Course</th>
+												<th>Board</th>
+												<th>University / School</th>
+												<th>Passing Year</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>
+													<select class="form-control">
+														<option>Secondary</option>
+														<option>Senior Secondary</option>
+														<option>Graduation</option>
+														<option>Post Graduation</option>
+													</select>
+												</td>
+												<td>
+													<input type="text" name="borad" class="form-control" id="board" placeholder="Board">
+												</td>
+												<td>
+													<input type="text" name="uni" class="form-control" id="uni" placeholder="University / School">											
+												</td>
+												<td>
+													<input type="number" name="year" class="form-control" id="year" placeholder="Passing Year">											
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="col-md-12 col-md-offset-8">
+										<div class="col-md-2">
+											<input type="button" name="btnadd" id="btnadd" value="Add more" class="btn btn-primary" onclick="eduAdd()">									
+										</div>
+										<div class="col-md-2">
+											<input type="button" name="btndel" id="btndel" value="Remove" class="btn btn-danger" onclick="Del('edu_table')">
+										</div>										
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="form-group">
+								<div class="col-md-10 col-md-offset-1"><h2>Experience</h2>
+									<table class="table table-bordered table-responsive table-hover text-centered" id="ex_table">
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>Designation</th>
+												<th>Organization</th>
+												<th>Time Period</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>
+													<input type="text" name="deg" id="deg" class="form-control" placeholder="Designation">
+												</td>
+												<td>
+													<input type="text" name="org" id="org" class="form-control" placeholder="Organization">
+												</td>
+												<td>
+													<input type="number" name="experiod" id="experiod" class="form-control" placeholder="Experience Period">
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="col-md-12 col-md-offset-8">
+										<div class="col-md-2">
+											<input type="button" name="btnadd" id="btnadd" value="Add more" class="btn btn-primary" onclick="exAdd()">									
+										</div>
+										<div class="col-md-2">
+											<input type="button" name="btndel" id="btndel" value="Remove" class="btn btn-danger" onclick="Del('ex_table')">
+										</div>										
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="panel-footer">
+					<div class="col-md-offset-10">
+						<input type="button" name="reset" id="reset" value="Reset" class="btn btn-warning" onclick="reset()">
+						<input type="button" name="submit" id="submit" value="Submit" class="btn btn-info" onclick="submit()">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	var add_row, len, add_option, add_input_txt;
+		function login(){
+			var username = document.getElementById('username').value;
+			var password = document.getElementById('pass').value;
+			alert("username : "+username+"\nPassword : "+password);
+		}
+
+		function submit(){
+			var input = document.getElementsByTagName("input");
+			len = input.length;
+			var input_values="";
+			var input_placeholder = "";
+			var input_final = "";
+			for (var i = 0; i < len; i++) {
+				if (input[i].type!=="button") {
+					input_placeholder = input[i].placeholder;
+					input_values = input[i].value;
+					input_final += input_placeholder+" : "+input_values+"\n";					
+				}
+			}
+			alert(input_final);
+		}
+
+		function reset(){
+
+		}
+
+//	Delete Last row from the table
+		function Del(table_id)	{
+			var table = document.getElementById(table_id);
+			len = table.rows.length;
+			if (len>2) {
+				table.deleteRow(len-1);
+			}
+		}
+
+// Add New Row to Education Table
+		function eduAdd()	{
+			var edu_table = document.getElementById("edu_table");
+			len = edu_table.rows.length;
+			var cell_len = edu_table.rows[0].cells.length;
+			add_row = edu_table.insertRow(len);
+
+		// Indexing Row Field
+			var add_cell_0 = add_row.insertCell(0);
+			add_cell_0.innerHTML = len;
+
+			for (var i = 1; i < cell_len; i++) {
+				var add_cell_i = add_row.insertCell(i);
+				var add_input_txt = document.createElement("input");
+				add_input_txt.type = "text";
+				add_input_txt.Class = "form-control";
+				add_input_txt.name = "board"+i;
+				add_input_txt.id = "board"+i;
+				if (i=1) {
+					var add_select = document.createElement("select");
+					add_select.class = "form-control";
+					var add_select_option = document.createElement("option");
+					add_select_option.innerHTML = "Senior Secondary";
+					add_select.appendChild(add_select_option);
+					add_cell_1.appendChild(add_select);
+				}
+				else if (i=2) {
+					add_input_txt.placeholder = "Board";
+				}
+				else if (i=3) {
+					add_input_txt.placeholder = "University/School";
+				}
+				add_cell_i.appendChild(add_input_txt);
+			}
+
+
+		// Course Field	
+
+		// Board Field 
+			add_input_txt.name = "board";
+			add_input_txt.id = "board"+len;
+
+		//University / School Field
+			add_input_txt.type = "text";
+			add_input_txt.name = "uni";
+			add_input_txt.id = "uni"+len;
+			add_input_txt.placeholder = "University/School";
+
+		// Passing Year Field
+			add_input_txt.type = "number";
+			add_input_txt.name = "year";
+			add_input_txt.id = "year"+len;
+			add_input_txt.placeholder = "Passing Year";
+		}
+
+// Add New row to Experience Table
+		function exAdd()	{
+			var ex_table = document.getElementById("ex_table");
+			len = ex_table.rows.length;
+			add_row = ex_table.insertRow(len);
+			var add_cell = add_row.insertCell(0);
+			add_cell.innerHTML = len;
+
+		// Designation Field
+			var add_cell_1 = add_row.insertCell(1);
+			add_input_txt = document.createElement("input");
+			add_input_txt.type = "text";
+			add_input_txt.name = "deg";
+			add_input_txt.id = "deg"+len;
+			add_input_txt.Class = "form-control";
+			add_input_txt.placeholder = "Designation";
+			add_cell_1.appendChild(add_input_txt);
+
+		// Organization Field
+			var add_cell_2 = add_row.insertCell(2);
+			add_input_txt = document.createElement("input");
+			add_input_txt.type = "text";
+			add_input_txt.name = "org";
+			add_input_txt.id = "org"+len;
+			add_input_txt.Class = "form-control";
+			add_input_txt.placeholder = "Organization";
+			add_cell_2.appendChild(add_input_txt);
+
+		// Experience Period Field
+			var add_cell_3 = add_row.insertCell(3);
+			add_input_txt = document.createElement("input");
+			add_input_txt.type = "number";
+			add_input_txt.name = "experiod";
+			add_input_txt.id = "experiod"+len;
+			add_input_txt.Class = "form-control";
+			add_input_txt.placeholder = "Experience Period";
+			add_cell_3.appendChild(add_input_txt);
+
+		}
+	</script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>		
+</body>
+</html>
